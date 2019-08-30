@@ -2,8 +2,16 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import "./App.css";
 import Photocard from "./components/Photocard";
+// import { Button } from 'reactstrap';
+import Jumbo from "./components/Jumbotron";
+import styled from "styled-components";
 
-function App() {
+const CustomH1 = styled.h1({
+  backgroundColor: 'salmon',
+  color: 'white',
+})
+
+function App () {
   const [data, setData] = useState({});
   useEffect(() => {
   }, [])
@@ -15,10 +23,13 @@ function App() {
   return (
     <div className="App">
   
-      <p>
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
-      </p>
+      </p> */}
+      <CustomH1>Nasa Pic of The Day</CustomH1>
+      <Jumbo/>
+      {/* <Button color="danger">danger</Button>{' '} */}
       <Photocard 
       title={data.title} 
       url={data.url}
